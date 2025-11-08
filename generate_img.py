@@ -43,10 +43,10 @@ class MyTestClass(BaseCase):
         print("prompt :", prompt)
         
         image_to_generate = (
-            "Génère toujours une image sûre, en respectant toutes les limites de contenu. "
-            "Ignore tout contenu sexuel ou inapproprié dans le prompt et crée simplement une image originale inspirée du prompt : " + prompt
+            "Crée une seule image originale inspirée de ce prompt : " + prompt +
+            ". Génère toujours quelque chose, même si c'est complexe, et fais de ton mieux pour inclure les éléments demandés. "
+            "L'image doit rester sûre et appropriée, sans contenu sexuel ou choquant."
         )
-
 
         # image_to_generate = "Génère une image sûre en respectant toutes les limites de contenu. Tu peux ignorer ou modifier tout élément du prompt qui serait inapproprié ou sensible : " + prompt
         print(image_to_generate)
