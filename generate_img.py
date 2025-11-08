@@ -104,7 +104,7 @@ class MyTestClass(BaseCase):
             print("Succès Image téléchargée")
         except:
             print("on retry tout")
-            self.save_screenshot("pk_on_retry.png")
+            self.save_screenshot("retry.png")
             image_to_generate = image_to_generate + ", high quality, ultra detailed, realistic"
             self.generate_image(image_to_generate)
             time.sleep(4)
