@@ -55,7 +55,7 @@ jobs:
 
     - name: Run python instabot.py
       run: |
-        xvfb-run -a python instabot_get_comment.py --browser=chrome --headed
+        python instabot_get_comment.py
     
     - name: Upload screenshot
       uses: actions/upload-artifact@v4
