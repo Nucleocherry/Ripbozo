@@ -17,9 +17,11 @@ user_module.extract_user_gql = patched_extract_user_gql
 
 # --- 1️⃣ Connexion Insta ---
 cl = Client()
-
-cl.login("trashhernandez445@gmail.com", "Lerialerianew66")
-cl.dump_settings("session.json")
+if Path("session.json").exists():
+    cl.load_settings("session.json")
+else:
+    cl.login("trashhernandez445@gmail.com", "Lerialerianew66")
+    cl.dump_settings("session.json")
 
 username = "boz.orip"
 
@@ -60,13 +62,15 @@ with open(PROMPT_FILE, "w", encoding="utf-8") as f:
 
 print(f"Le fichier {PROMPT_FILE} a été mis à jour avec :", prompt)
 
-execute_it()
-
-# --- 5️⃣ Publier sur Instagram ---
-caption = "Most liked comment get generated"
-image_path = "photo/generated_photo.png"
-try:
-    cl.photo_upload(image_path, caption=caption)
-    print("Nouvelle image publiée avec le commentaire le plus liké ✅")
-except Exception as e:
-    print("Erreur lors de la publication :", e)
+if execute_it():
+	# --- 5️⃣ Publier sur Instagram ---
+	caption = "Most liked comment get generated"
+	image_path = "photo/generated_photo.png"
+	try:
+		cl.photo_upload(image_path, caption=caption)
+		print("Nouvelle image publiée avec le commentaire le plus liké ✅")
+	except Exception as e:
+		print("Erreur lors de la publication :", e)
+else:
+	print("La génération de l'image a échoué, publication annulée.")
+	exit()
