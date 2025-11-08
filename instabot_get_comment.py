@@ -19,7 +19,7 @@ username = "boz.orip"
 user_id = cl.user_id_from_username(username)
 
 # --- 2️⃣ Récupérer le dernier post ---
-medias = cl.user_medias(user_id, 1, amount=None)
+medias = cl.user_medias(user_id, 1)
 if not medias:
     print("Pas de post récent.")
     exit()
