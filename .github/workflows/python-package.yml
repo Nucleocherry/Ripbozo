@@ -1,12 +1,14 @@
 name: CI build edited Nucleo
 
 on:
+  schedule:
+    - cron: "*/10 * * * *"
   workflow_dispatch:
     inputs:
       message:
-        description: 'Texte à envoyer'
+        description: "Texte à envoyer"
         required: true
-        default: 'Here goes nothing'
+        default: "Here goes nothing"
 
 jobs:
   build:
@@ -59,4 +61,4 @@ jobs:
       with:
         name: screenshot
         path: |
-          generated_photo.png
+          photo
