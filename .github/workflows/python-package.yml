@@ -2,7 +2,14 @@ name: CI build edited Nucleo
 
 on:
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */2 * * *"  # toutes les 2 heures
+  workflow_dispatch:
+    inputs:
+      message:
+        description: "Texte à envoyer"
+        required: true
+        default: "Here goes nothing"
+
 
 
 jobs:
