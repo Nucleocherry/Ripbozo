@@ -8,11 +8,9 @@ PROMPT_FILE = Path("prompt.txt")
 # --- 1️⃣ Connexion Insta ---
 cl = Client()
 
-if Path("session.json").exists():
-    cl.load_settings("session.json")
-else:
-    cl.login("trashhernandez445@gmail.com", "Lerialerianew66")
-    cl.dump_settings("session.json")
+
+cl.login("trashhernandez445@gmail.com", "Lerialerianew66")
+cl.dump_settings("session.json")
 
 
 username = "boz.orip"
