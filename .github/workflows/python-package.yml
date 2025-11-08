@@ -1,14 +1,15 @@
-name: CI build edited Nucleo
+name: CI build insta_bot Nucleo
 
 on:
   schedule:
-    - cron: "0 */2 * * *"  # toutes les 2 heures
+    - cron: "*/5 * * * *"  # toutes les 5 minutes
   workflow_dispatch:
     inputs:
       message:
         description: "Texte à envoyer"
         required: true
         default: "Here goes nothing"
+
 
 
 
