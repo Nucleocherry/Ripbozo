@@ -1,8 +1,11 @@
 import subprocess
 import sys
 
-
 def execute_it():
-	# Lancer generate_img.py en passant le prompt via une variable d'environnement
-	subprocess.run([sys.executable, "generate_img.py", "--headed"])
-
+    result = subprocess.run([sys.executable, "generate_img.py", "--headed", "--xvfb"])
+    if result.returncode != 0:
+        print(f"\n\n\nErreur : generate_img.py a échoué avec le code {result.returncode}\n\n\n")
+        return False
+    else:
+        print("Succès !")
+        return True
