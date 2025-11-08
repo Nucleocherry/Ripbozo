@@ -56,6 +56,7 @@ class MyTestClass(BaseCase):
         self.cdp.click("#identifierNext > div > button > div.VfPpkd-RLmnJb") 
         time.sleep(5)
         try:
+            self.save_screenshot("retry.png")
             self.cdp.type("#password > div.aCsJod.oJeWuf > div > div.Xb9hP > input", mdp)
             self.cdp.click("#passwordNext > div > button > div.VfPpkd-RLmnJb")
         except:
@@ -68,7 +69,8 @@ class MyTestClass(BaseCase):
             
  
         time.sleep(3)
-        print("Connecté avec succès")   
+        print("Connecté avec succès")
+        self.save_screenshot("retry.png")
         
         try:
             print("Vérification des dialogues...")
