@@ -59,7 +59,7 @@ python-xlib==0.33
 python3-xlib==0.15
 pytweening==1.2.0
 PyYAML==6.0.3
-requests==2.32.4
+requests
 rich==14.2.0
 sbvirtualdisplay==1.4.0
 selenium==4.38.0
